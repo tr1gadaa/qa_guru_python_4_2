@@ -7,8 +7,7 @@ from selene.support.shared import browser
 def browser_settings():
     browser.config.browser_name = 'firefox'
     browser.config.hold_browser_open = True
-    browser.config.window_height = 960
-    browser.config.window_width = 720
+    browser.config.driver.maximize_window()
 
 def test_positive_case(browser_settings):
     browser.open('https://demoqa.com/automation-practice-form')
@@ -22,7 +21,7 @@ def test_positive_case(browser_settings):
     browser.element('option[value="1995"]').click()
     browser.element('.react-datepicker__day--008').click()
     browser.element('[for=hobbies-checkbox-3]').click()
-    browser.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    #browser.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     browser.element('textarea[id=currentAddress]').should(be.blank).type('Russia, Moscow, Bolshaya st., 5')
     browser.element('.css-tlfecz-indicatorContainer').click()
     browser.element('[id=react-select-3-option-0]').click()
