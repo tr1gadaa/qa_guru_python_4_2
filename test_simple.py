@@ -22,6 +22,7 @@ def test_positive_case(browser_settings):
     browser.element('option[value="1995"]').click()
     browser.element('.react-datepicker__day--008').click()
     browser.element('[for=hobbies-checkbox-3]').click()
+    browser.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     browser.element('textarea[id=currentAddress]').should(be.blank).type('Russia, Moscow, Bolshaya st., 5')
     browser.element('.css-tlfecz-indicatorContainer').click()
     browser.element('[id=react-select-3-option-0]').click()
