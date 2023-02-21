@@ -34,3 +34,6 @@ def test_positive_case(browser_settings):
     assert browser.element('.modal-content').should(have.text('Thanks for submitting the form'))
     browser.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     browser.element('[id=closeLargeModal]').click()
+
+
+def test_negative_case(browser_settings):
