@@ -56,6 +56,6 @@ def test_negative_case(browser_settings):
     browser.element('.css-tlfecz-indicatorContainer').click()
     browser.element('[id=react-select-4-option-1]').click()
     browser.element('button[id=submit]').click()
-    assert browser.element('.table > tbody:nth-child(2) > tr:nth-child(2) > td:nth-child(2)').should_not(have.text())
+    assert browser.element('.td[2]').should(have.no.text(''))
     browser.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     browser.element('[id=closeLargeModal]').click()
